@@ -46,8 +46,8 @@ const MAINNET_ENV_CONFIG = {
   ],
 };
 const SUFFIX_TO_SLUG_MAP = {};
-Object.keys(JUNGLE_ENV_CONFIG.siteSuffixes).map(s=>SUFFIX_TO_SLUG_MAP[s] = JUNGLE_ENV_CONFIG.slug);
-Object.keys(MAINNET_ENV_CONFIG.siteSuffixes).map(s=>SUFFIX_TO_SLUG_MAP[s] = MAINNET_ENV_CONFIG.slug);
+JUNGLE_ENV_CONFIG.siteSuffixes.map(s=>SUFFIX_TO_SLUG_MAP[s] = JUNGLE_ENV_CONFIG.slug);
+MAINNET_ENV_CONFIG.siteSuffixes.map(s=>SUFFIX_TO_SLUG_MAP[s] = MAINNET_ENV_CONFIG.slug);
 
 
 function getDomainFromURL(urlString){
