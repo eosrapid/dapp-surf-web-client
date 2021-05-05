@@ -117,6 +117,13 @@ async function loadWebsiteForDomain(domain) {
       domain,
       wsHash
     );
+
+    if(supportsAssetCache()){
+
+      const assetCacheManager = getAssetCacheManager();
+      await assetCacheManager.open();
+      await assetCacheManager.addAsset(wsHash, websiteContentResponse.content);
+    }
   }
   const goodAPIUrls = metadataResult.votingApis.slice(websiteContentResponse.goodAPIUrlStartIndex).map(va=>({
     apiUrl: va.apiUrl,
