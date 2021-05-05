@@ -15,8 +15,8 @@ const JUNGLE_ENV_CONFIG = {
 
 const MAINNET_ENV_CONFIG = {
   chainId: 'aca376f206b8fc25a6ed44dbdc66547c36c6c33e3a119ffbeaef943642f0e906',
-  siteContract: 'dappsurfweb1',
-  assetContract: 'debugstorage',
+  siteContract: 'websitestore',
+  assetContract: 'assetstorage',
   siteSuffixes: [".dapp.surf", ".net.inc"],
   slug: "mainnet",
   apiUrls: [
