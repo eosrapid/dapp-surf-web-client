@@ -74,6 +74,7 @@ async function getWebsiteDataFromCache(hash){
     throw new Error("Does not support asset cache!");
   }
   const assetCacheManager = getAssetCacheManager();
+  await assetCacheManager.open();
   const result = await assetCacheManager.getAssetData(hash);
   if(typeof result!=='string'){
     throw new Error("Website data not found for hash "+hash);
@@ -95,7 +96,7 @@ async function loadWebsiteForDomain(domain) {
     try {
 
       const assetCacheManager = getAssetCacheManager();
-
+      await assetCacheManager.open();
       const wsCacheContent = await assetCacheManager.getAssetData(wsHash);
       if(typeof wsCacheContent!=='string'){
         throw new Error("Missing website content in cache response!");
