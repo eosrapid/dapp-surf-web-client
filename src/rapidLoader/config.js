@@ -2,7 +2,7 @@ const JUNGLE_ENV_CONFIG = {
   chainId: '2a02a0053e5a8cf73a56ba0fda11e4d92e0238a4a2aa74fccf46d5a910746840',
   siteContract: 'dappsurfweb1',
   assetContract: 'debugstorage',
-  siteSuffixes: [".jungle3.eos.cab"],
+  siteSuffixes: [".jungle3.eos.cab",".jungle.eos.cab"],
   slug: "jungle",
   apiUrls: [
     "https://jungle3.eossweden.org",
