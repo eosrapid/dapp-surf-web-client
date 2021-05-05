@@ -1,0 +1,42 @@
+{
+  "name": "rapid-web",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.3.2",
+    "@testing-library/user-event": "^7.1.2",
+    "eosjs-light": "^0.0.4",
+    "js-sha256": "^0.9.0",
+    "pako": "^2.0.3",
+    "preact": "^10.5.4",
+    "react-scripts": "3.4.3"
+  },
+  "scripts": {
+    "start": "react-app-rewired start",
+    "build": "GENERATE_SOURCEMAP=false react-app-rewired build",
+    "test": "react-app-rewired test",
+    "eject": "react-app-rewired eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "mini-svg-data-uri": "^1.2.3",
+    "node-sass": "^4.14.1",
+    "react-app-rewired": "^2.1.6",
+    "url-loader": "^4.1.1"
+  }
+}

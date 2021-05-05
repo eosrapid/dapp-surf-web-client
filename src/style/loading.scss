@@ -1,0 +1,79 @@
+$loading-box-base: rgb(64, 191, 170);
+.loadingBoxContainer{
+  perspective: 200px;
+  transform: preserve-3d;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.loadingTextContainer{
+  perspective: 200px;
+  transform: preserve-3d;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin-top:12vmin;
+}
+.loadingBox{
+  --size: 12vmin;
+  width: var(--size); 
+  height: var(--size); 
+  background-color: rgba($loading-box-base, 0.3);
+  /*background-color: rgba(64, 191, 170, 0.3);*/
+  transform: rotateZ(30deg) skew(-35deg);
+  position: relative;
+  animation: loadingBoxAnim 800ms infinite ease-in-out both alternate;
+}
+.loadingBox:nth-of-type(1){
+  animation-delay: 0.1s;
+}
+.loadingBox:nth-of-type(2){
+  animation-delay: 0.2s;
+}
+.loadingBox:nth-of-type(3){
+  animation-delay: 0.3s;
+}
+.loadingBox:nth-of-type(4){
+  animation-delay: 0.4s;
+}
+
+.loadingBox::after, .loadingBox::before{
+  content: "";
+  width: inherit;
+  height: 5px;
+  position: absolute;
+  left: 0; 
+  bottom: 0; 
+}
+.loadingBox::before{
+  transform-origin: left bottom;
+  background-color: rgba($loading-box-base, 0.7);
+  /*background-color: rgba(64, 191, 170, 0.7);*/
+  transform: translateX(var(--size)) rotateZ(180deg) skew(45deg);
+}
+.loadingBox::after{
+  background-color: rgba($loading-box-base, 0.5);
+  /*background-color: rgba(64, 191, 170, 0.5);*/
+  transform-origin: right bottom;
+  transform: translateX(0) rotateZ(90deg) skew(-45deg);
+}
+
+/* bring them all togehter */
+.loadingBox + .loadingBox{
+  top: 0;
+  position: absolute;
+  transform: translateY(0) rotateZ(30deg) skew(-35deg);
+}
+
+@keyframes loadingBoxAnim {
+  from{
+    transform: translateY(0) rotateZ(30deg) skew(-35deg);
+  }
+  to{
+    transform: translateY(calc(-1.2 * var(--size))) rotateZ(30deg) skew(-35deg);
+  }
+}
